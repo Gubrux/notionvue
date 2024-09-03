@@ -5,7 +5,7 @@
             <thead>
                     <tbody>
                     <!-- row 2 -->
-                    <tr v-for="(project, index) in projectsStore.projects" :key="project.id" class="hover">
+                    <tr v-for="(project, index) in projectsStore.projectList" :key="project.id" class="hover">
                         <th>{{ index + 1 }}</th>
                         <td>{{ project.name }}</td>
                         <td>{{ project.tasks.length }}</td>
@@ -19,7 +19,7 @@
         </div>
 
         <InputModal
-        @value="onValue"
+        @value="projectsStore.addProject"
         :open="modalOpen"
         @close="modalOpen = false"
         placeholder="Ingrese el nombre del proyecto"
@@ -51,9 +51,6 @@
         <FabButton button-color="indigo" position="bottom-right" @click="modalOpen = true">
             <AddCircle />
         </FabButton>
-        <FabButton button-color="green" position="top-right" @click="CustomModalOpen=true">
-            <AddCircle />
-        </FabButton>
 </template>
 
 <script lang="ts" setup>
@@ -68,11 +65,7 @@ const modalOpen = ref(false);
 const CustomModalOpen = ref(false);
 const projectsStore = useProjectStore();
 
-const onValue = (projectName: string) => {
 
-    projectsStore.addProject(projectName);
-    modalOpen.value = false;
-};
 
 
 </script>
