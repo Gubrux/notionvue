@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 interface Props {
     position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
-    buttonColor?: 'green' | 'indigo';
+    buttonColor?: 'green' | 'indigo' | 'amarillo';
 }
 
 withDefaults(defineProps<Props>(), {
@@ -30,6 +30,10 @@ defineEmits(['click']);
 }
 .indigo {
     background-color: rgb(114, 44, 245);
+}
+
+.amarillo {
+    background-color: rgb(255, 255, 0);
 }
 
 .top-left {
