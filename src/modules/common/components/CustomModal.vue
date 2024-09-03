@@ -10,6 +10,9 @@
             <div class="border-t border-blue-500">
                 <slot name="footer" />
             </div>
+            <div class="border-t border-blue-500">
+                <slot name="footer2" />
+            </div>
         </div>
     </dialog>
     <div
