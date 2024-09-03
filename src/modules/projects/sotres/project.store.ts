@@ -6,7 +6,7 @@ import { useLocalStorage } from '@vueuse/core';
 
 export const useProjectStore = defineStore('projects', () => {
     const projects = ref(useLocalStorage<Project[]>('projects', []));
-
+    
     const addProject = (name: string) => {
         if (name.length === 0) return;
 
